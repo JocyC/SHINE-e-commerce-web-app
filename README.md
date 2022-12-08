@@ -6,10 +6,11 @@
 
 #### Some of the libraries this app uses:
 
+- React (useState, useEffect, useReducer, useContext, etc.)
 - React-Router@6
-- Auth0
 - Axios
 - Styled-components
+- Auth0
 
 #### The API I use to obtain dummy products:
 
