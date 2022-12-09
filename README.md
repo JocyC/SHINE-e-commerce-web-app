@@ -6,11 +6,15 @@
 
 #### Some of the libraries this app uses:
 
-- React (useState, useEffect, useReducer, useContext, etc.)
-- React-Router@6
-- Axios
-- Styled-components
-- Auth0
+- General:
+  - React (useState, useEffect, useReducer, useContext, etc.)
+  - React-Router@6
+  - Axios
+- Authorization
+  - Auth0
+- Styles
+  - Antd
+  - Styled-components
 
 #### The API I use to obtain dummy products:
 
@@ -18,6 +22,10 @@
 
 #### Graphic design resources:
 
-I found the resouces for pictures on (links), and design the logo and icon on () and ().
+- Fonts: Google Fonts (https://fonts.google.com/)
+- Color palette ideas: Coolors (https://coolors.co/)
+- Free to use pictures:
+- Logo design app:
+- Icon design app:
 
 Currently there would only be front-end design. But I will add back-end functionalities later once I finish learning Node.js and MongoDB.

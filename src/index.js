@@ -3,12 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "./context/theme_context";
+import { ProductsProvider } from "./context/products_context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <ProductsProvider>
+        <App />
+      </ProductsProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -35,6 +35,9 @@ html {
   --clr-grey-10: #f8f9fa;
   --clr-white: #fff;
 
+  /* other colors */
+  --clr-red-dark: rgba(172, 15, 15, 0.914);
+  --clr-red-light: rgb(232, 145, 145);
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -42,6 +45,7 @@ html {
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --font: "Changa", Sans-Serif;
 }
 
 /*
@@ -69,7 +73,7 @@ Global Styles
 }
 
 body {
-  font-family: "Changa", Sans-Serif;
+  font-family: var(--font);
   line-height: 1.5;
   font-size: 0.875rem;
 }
