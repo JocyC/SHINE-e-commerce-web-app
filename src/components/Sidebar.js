@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Switch from "./Switch";
 import Logo from "./Logo";
@@ -13,18 +13,20 @@ import { useUserContext } from "../context/user_context";
 const Sidebar = () => {
   const { theme } = useThemeContext();
   const { isSidebarOpen, closeSidebar } = useProductsContext();
-  console.log(isSidebarOpen);
   return (
     <Wrapper>
       <aside
-        className={
-          isSidebarOpen ? `sidebar show-sidebar ${theme}` : `sidebar ${theme}`
-        }
+        className={`${
+          isSidebarOpen ? "sidebar show-sidebar" : "sidebar"
+        } ${theme}`}
+        // className={`${
+        //   isSidebarOpen ? "sidebar " : "show-sidebar sidebar"
+        // } ${theme}`}
       >
         <div className="sidebar-header">
           <Logo />
           <Switch />
-          <button className="close-btn" onClick={closeSidebar}>
+          <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -33,7 +35,7 @@ const Sidebar = () => {
             const { id, text, url } = link;
             return (
               <li key={id}>
-                <Link to={url} className={theme}>
+                <Link to={url} className={theme} onClick={closeSidebar}>
                   {text}
                 </Link>
               </li>

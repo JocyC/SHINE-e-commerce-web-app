@@ -24,6 +24,7 @@ const Navbar = () => {
               <Logo />
               <Switch />
             </div>
+            {/* <button className="nav-toggle" type="button" onClick={openSidebar}> */}
             <button className="nav-toggle" type="button" onClick={openSidebar}>
               <FaBars />
             </button>
