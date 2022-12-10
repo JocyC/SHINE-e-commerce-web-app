@@ -3,6 +3,7 @@
 ### An E-commerce platform built with React.
 
 (demo link)
+(to be deployed with Netlify)
 
 #### Some of the libraries this app uses:
 
@@ -19,13 +20,15 @@
 #### The API I use to obtain dummy products:
 
 (links)
+https://dummyjson.com/docs/products
+https://fakestoreapi.com/docs
 
 #### Graphic design resources:
 
 - Fonts: Google Fonts (https://fonts.google.com/)
 - Color palette ideas: Coolors (https://coolors.co/)
-- Free to use pictures:
-- Logo design app:
-- Icon design app:
+- Pictures: Pexel (https://www.pexels.com/)
+- Logo design app: Figma (https://www.figma.com/)
+- Icon design app: Favicon.io (https://favicon.io/)
 
 Currently there would only be front-end design. But I will add back-end functionalities later once I finish learning Node.js and MongoDB.

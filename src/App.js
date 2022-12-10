@@ -25,7 +25,7 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="cart" element={<Cart />} />
         <Route path="products" element={<Products />} />
-        <Route path="products/" element={<SingleProduct />} />
+        <Route path="products/:id" element={<SingleProduct />} />
         {/* check if products/ works later */}
         <Route
           path="checkout"
