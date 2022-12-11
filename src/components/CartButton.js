@@ -25,7 +25,7 @@ const CartButton = () => {
       </Link>
       {myUser ? (
         <button
-          className="auth-btn"
+          className={`auth-btn ${theme}`}
           type="button"
           onClick={() => {
             clearCart();
@@ -37,7 +37,11 @@ const CartButton = () => {
           Logout <FaUserMinus />
         </button>
       ) : (
-        <button className="auth-btn" type="button" onClick={loginWithRedirect}>
+        <button
+          className={`auth-btn ${theme}`}
+          type="button"
+          onClick={loginWithRedirect}
+        >
           Login <FaUserPlus />
         </button>
       )}

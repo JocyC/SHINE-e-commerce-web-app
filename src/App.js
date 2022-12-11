@@ -11,35 +11,35 @@ import {
   About,
   Products,
   PrivateRoute,
-  // AuthWrapper,
+  AuthWrapper,
 } from "./pages";
 
 const App = () => {
   return (
-    // <AuthWrapper>
-    <BrowserRouter>
-      <Navbar />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="products" element={<Products />} />
-        <Route path="products/:id" element={<SingleProduct />} />
+    <AuthWrapper>
+      <BrowserRouter>
+        <Navbar />
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<SingleProduct />} />
 
-        <Route
-          path="checkout"
-          element={
-            <PrivateRoute>
-              <Checkout />
-            </PrivateRoute>
-          }
-        />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-    // </AuthWrapper>
+          <Route
+            path="checkout"
+            element={
+              <PrivateRoute>
+                <Checkout />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </AuthWrapper>
   );
 };
 

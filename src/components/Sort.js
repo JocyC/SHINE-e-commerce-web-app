@@ -2,7 +2,9 @@ import React from "react";
 import { useFilterContext } from "../context/filter_context";
 import { BsFillGridFill, BsList } from "react-icons/bs";
 import styled from "styled-components";
+import { useThemeContext } from "../context/theme_context";
 const Sort = () => {
+  const { theme } = useThemeContext();
   const {
     grid_view,
     filtered_products: products,
@@ -36,7 +38,7 @@ const Sort = () => {
         <select
           name="sort"
           id="sort"
-          className="sort-input"
+          className={`sort-input ${theme}`}
           value={sort}
           onChange={updateSort}
         >
