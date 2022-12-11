@@ -26,13 +26,13 @@ const App = () => {
         <Route path="cart" element={<Cart />} />
         <Route path="products" element={<Products />} />
         <Route path="products/:id" element={<SingleProduct />} />
-        {/* check if products/ works later */}
+
         <Route
           path="checkout"
           element={
-            // <PrivateRoute>
-            <Checkout />
-            // </PrivateRoute>
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
           }
         />
         <Route path="*" element={<Error />} />
