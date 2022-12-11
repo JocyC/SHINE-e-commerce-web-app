@@ -18,6 +18,8 @@ import Sort from "./Sort";
 import Stars from "./Stars";
 import CartContent from "./CartContent";
 import PageHero from "./PageHero";
+import Checkout from "./Checkout";
+
 export {
   FeaturedProducts,
   Navbar,
@@ -37,4 +39,5 @@ export {
   Stars,
   CartContent,
   PageHero,
+  Checkout,
 };

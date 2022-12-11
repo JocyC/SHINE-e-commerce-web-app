@@ -13,7 +13,7 @@ import { useUserContext } from "../context/user_context";
 const Navbar = () => {
   const { theme } = useThemeContext();
   const { openSidebar } = useProductsContext();
-  // const { myUser } = useUserContext();
+  const { myUser } = useUserContext();
 
   return (
     <Wrapper>
@@ -24,7 +24,6 @@ const Navbar = () => {
               <Logo />
               <Switch />
             </div>
-            {/* <button className="nav-toggle" type="button" onClick={openSidebar}> */}
             <button className="nav-toggle" type="button" onClick={openSidebar}>
               <FaBars />
             </button>
@@ -40,11 +39,14 @@ const Navbar = () => {
                 </li>
               );
             })}
-            <li>
-              <Link to="/checkout" className={theme}>
-                checkout
-              </Link>
-            </li>
+
+            {myUser && (
+              <li>
+                <Link to="/checkout" className={theme}>
+                  checkout
+                </Link>
+              </li>
+            )}
           </ul>
           <CartButton />
         </div>

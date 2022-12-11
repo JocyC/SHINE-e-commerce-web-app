@@ -10,23 +10,37 @@ import { useUserContext } from "../context/user_context";
 
 const CartButton = () => {
   const { theme } = useThemeContext();
+  const { closeSidebar } = useProductsContext();
+  const { total_items, clearCart } = useCartContext();
+  const { loginWithRedirect, myUser, logout } = useUserContext();
+
   return (
     <Wrapper className="cart-btn-wrapper">
-      <Link to="/" className={`cart-btn ${theme}`}>
+      <Link to="/cart" className={`cart-btn ${theme}`} onClick={closeSidebar}>
         Cart
         <span className={"cart-container"}>
           <FaShoppingCart />
-          <span className="cart-value">0</span>
+          <span className="cart-value">{total_items}</span>
         </span>
       </Link>
-      <button
-        type="button"
-        className={`auth-btn ${theme}`}
-        onClick={() => console.log("login")}
-      >
-        Login
-        <FaUserPlus />
-      </button>
+      {myUser ? (
+        <button
+          className="auth-btn"
+          type="button"
+          onClick={() => {
+            clearCart();
+            logout({
+              returnTo: window.location.origin,
+            });
+          }}
+        >
+          Logout <FaUserMinus />
+        </button>
+      ) : (
+        <button className="auth-btn" type="button" onClick={loginWithRedirect}>
+          Login <FaUserPlus />
+        </button>
+      )}
     </Wrapper>
   );
 };
@@ -45,6 +59,7 @@ const Wrapper = styled.div`
     font-size: 1rem;
     letter-spacing: var(--spacing);
     font-family: var(--font);
+    cursor: pointer;
     svg {
       margin-left: 5px;
     }

@@ -21,7 +21,6 @@
 
 (links)
 https://dummyjson.com/docs/products
-https://fakestoreapi.com/docs
 
 #### Graphic design resources:
 
