@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 import { getUniqueValues, formatPrice } from "../utils/helpers";
@@ -8,10 +8,10 @@ const Filters = () => {
     updateFilters,
     clearFilters,
     all_products,
-    filters: { text, company, category, min_price, max_price, price, shipping },
+    filters: { text, brand, category, min_price, max_price, price, shipping },
   } = useFilterContext();
   const categories = getUniqueValues(all_products, "category");
-  const companies = getUniqueValues(all_products, "company");
+  const brands = getUniqueValues(all_products, "brand");
 
   return (
     <Wrapper>
@@ -53,16 +53,16 @@ const Filters = () => {
               })}
             </div>
           </div>
-          {/* companies */}
+          {/* brands */}
           <div className="form-control">
-            <h5>company</h5>
+            <h5>brand</h5>
             <select
-              name="company"
-              value={company}
+              name="brand"
+              value={brand}
               onChange={updateFilters}
-              className="company"
+              className="brand"
             >
-              {companies.map((c, index) => {
+              {brands.map((c, index) => {
                 return (
                   <option key={index} value={c}>
                     {c}
@@ -139,11 +139,12 @@ const Wrapper = styled.section`
   .active {
     border-color: var(--clr-grey-5);
   }
-  .company {
+  .brand {
     background: var(--clr-grey-10);
     border-radius: var(--radius);
     border-color: transparent;
     padding: 0.25rem;
+    max-width: 8rem;
   }
   .all-btn {
     display: flex;

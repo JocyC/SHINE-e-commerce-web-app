@@ -1,4 +1,10 @@
-import React, { useEffect, useContext, useReducer } from "react";
+import React, {
+  useEffect,
+  useContext,
+  useReducer,
+  useState,
+  useMemo,
+} from "react";
 import reducer from "../reducers/filter_reducer";
 import {
   LOAD_PRODUCTS,
@@ -19,9 +25,8 @@ const initialState = {
   sort: "",
   filters: {
     text: "",
-    company: "all",
+    brand: "all",
     category: "all",
-    color: "all",
     min_price: 0,
     max_price: 0,
     price: 0,
@@ -41,9 +46,21 @@ export const FilterProvider = ({ children }) => {
   // gotcha: product is initially blank, so need to call dispatch again when it's loaded
 
   useEffect(() => {
-    dispatch({ type: FILTER_PRODUCTS });
+    // dispatch({ type: FILTER_PRODUCTS });
+    ApplyFilters();
     dispatch({ type: SORT_PRODUCTS });
   }, [products, state.sort, state.filters]);
+
+  // debounce
+  const debounce = () => {
+    let timeoutID;
+    return () => {
+      timeoutID = setTimeout(() => {
+        dispatch({ type: FILTER_PRODUCTS });
+      }, 1000);
+    };
+  };
+  const ApplyFilters = useMemo(() => debounce(), []);
 
   const setGridView = () => {
     dispatch({ type: SET_GRIDVIEW });
@@ -61,9 +78,6 @@ export const FilterProvider = ({ children }) => {
     if (name === "category") {
       value = e.target.textContent;
     }
-    if (name === "color") {
-      value = e.target.dataset.color;
-    }
     if (name === "price") {
       value = Number(value);
     }
@@ -72,6 +86,7 @@ export const FilterProvider = ({ children }) => {
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
+
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
