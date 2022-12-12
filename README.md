@@ -3,7 +3,10 @@
 ### An E-commerce platform built with React.
 
 https://shine-online-store.netlify.app/
+
 (Deployed by Netlify)
+
+Currently it is only a front-end design. I will add back-end functionalities to it later once I finish learning Node.js (and maybe MongoDB?)
 
 #### Some of the libraries this app uses:
 
@@ -28,5 +31,3 @@ https://dummyjson.com/docs/products
 - Pictures: Pexel (https://www.pexels.com/)
 - Logo design app: Figma (https://www.figma.com/)
 - Icon design app: Favicon.io (https://favicon.io/)
-
-Currently there would only be front-end design. But I will add back-end functionalities later once I finish learning Node.js and MongoDB.
