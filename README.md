@@ -2,8 +2,8 @@
 
 ### An E-commerce platform built with React.
 
-(demo link)
-(to be deployed with Netlify)
+https://shine-online-store.netlify.app/
+(Deployed by Netlify)
 
 #### Some of the libraries this app uses:
 
@@ -19,7 +19,6 @@
 
 #### The API I use to obtain dummy products:
 
-(links)
 https://dummyjson.com/docs/products
 
 #### Graphic design resources:
